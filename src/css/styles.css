@@ -1,9 +1,3 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
 @import url('./vite-promo.css');
 @import url('./header.css');
@@ -13,13 +7,137 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.form {
+  margin-bottom: 20px;
+  color: #808080;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.form input {
+  width: 260px;
+  height: 34px;
+  border-radius: 4px;
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  border-color: #808080;
+  padding-left: 16px;
+}
+
+.form input:hover {
+  border-color: #040404;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+}
+
+.form button:hover {
+  background: #6c8cff;
+}
+
+.loader {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #808080;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.photo-card a{
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 152px;
+  max-height: calc(100% - 40px);
+  object-fit: cover;
+}
+
+.info {
+  padding: 4px 25px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.info-item {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 200%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.info-item b {
+  font-weight: 400;
+  line-height: 133%;
+}
+
+.load-more {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+  margin: 32px auto;
 }
