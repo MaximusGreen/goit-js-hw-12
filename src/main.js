@@ -13,6 +13,7 @@ const loadMoreBtn = document.querySelector('.load-more');
 let query = '';
 let page = 1;
 const perPage = 15;
+let lightbox;
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -35,7 +36,11 @@ form.addEventListener('submit', async (event) => {
       return;
     }
     renderImages(data.hits);
-    new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+    if (!lightbox) {
+      lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+    } else {
+      lightbox.refresh();
+    }
 
     if (data.hits.length === perPage) {
       loadMoreBtn.style.display = 'block';
@@ -54,7 +59,9 @@ loadMoreBtn.addEventListener('click', async () => {
   try {
     const data = await fetchImages(query, page, perPage);
     renderImages(data.hits);
-    new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+    if (lightbox) {
+      lightbox.refresh();
+    }
 
     if (data.hits.length < perPage) {
       loadMoreBtn.style.display = 'none';
